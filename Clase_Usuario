@@ -1,0 +1,20 @@
+class Usuario:
+    def __init__(self):
+        self.nombre=input("Ingrese su nombre: ") # Nombre del ususario
+        self.cantramos=int(input("Ingrese la cantidad de ramos: ")) #cantramos=cantidad de ramos
+        self.total_creditos = 0 # La suma de todos los creditos se ingresara aqui 
+        self.ramos = {} # usado para almacenar los nombres de cada ramo y su cantidad de creditos
+
+        for i in range(self.cantramos):
+            nomb_ram = input("Ingrese el nombre de su ramo: ")
+            creditos = int(input("Ingrese la cantidad de créditos para {}: ".format(nomb_ram))) # En {} se agrega el nomn_ram, el format le da el valor del credito segun nomn_ram
+            self.ramos[nomb_ram] = creditos  # Almacenamos el ramo y sus créditos en el diccionario
+            self.total_creditos += creditos  # Sumamos los créditos al total
+    
+    def horasEstudio(self):
+        print ("Buenas {}!".format(self.nombre))
+        print("Su horas de estudio son: ",self.total_creditos)
+
+# Crear una instancia de la clase Usuario
+mi_usuario = Usuario()
+mi_usuario.horasEstudio()
